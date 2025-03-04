@@ -1,0 +1,141 @@
+{
+    "blockly": false,
+    "blockly_xml": "<xml></xml>",
+    "category": "Proof of Value",
+    "coa": {
+        "data": {
+            "description": "This workbook, runs on all events, looking for container names and labels with known workbooks that are used in the POV, and automatically attaches the workbook to save an analyst doing it manually.",
+            "edges": [
+                {
+                    "id": "port_0_to_port_3",
+                    "sourceNode": "0",
+                    "sourcePort": "0_out",
+                    "targetNode": "3",
+                    "targetPort": "3_in"
+                },
+                {
+                    "id": "port_3_to_port_1",
+                    "sourceNode": "3",
+                    "sourcePort": "3_out",
+                    "targetNode": "1",
+                    "targetPort": "1_in"
+                }
+            ],
+            "globalCustomCode": "\n",
+            "hash": "d8b9ada3ec59ad1d85a541d1cfc233bf5928f04c",
+            "nodes": {
+                "0": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "functionName": "on_start",
+                        "id": "0",
+                        "type": "start"
+                    },
+                    "errors": {},
+                    "id": "0",
+                    "type": "start",
+                    "warnings": {},
+                    "x": 19.999999999999986,
+                    "y": -6.394884621840902e-14
+                },
+                "1": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "functionName": "on_finish",
+                        "id": "1",
+                        "type": "end"
+                    },
+                    "errors": {},
+                    "id": "1",
+                    "type": "end",
+                    "warnings": {},
+                    "x": 19.999999999999986,
+                    "y": 295.9999999999999
+                },
+                "3": {
+                    "data": {
+                        "advanced": {
+                            "join": []
+                        },
+                        "customFunction": {
+                            "draftMode": false,
+                            "name": "POV_Add_Workbook_py3",
+                            "repoName": "SOAR_Autobahn"
+                        },
+                        "functionId": 2,
+                        "functionName": "POV_Add_Workbook_py3_2",
+                        "id": "3",
+                        "loop": {
+                            "enabled": false,
+                            "exitAfterUnit": "m",
+                            "exitAfterValue": 10,
+                            "exitConditionEnabled": false,
+                            "exitLoopAfter": 2,
+                            "pauseUnit": "m",
+                            "pauseValue": 2
+                        },
+                        "selectMore": false,
+                        "type": "utility",
+                        "utilities": {
+                            "POV_Add_Workbook_py3": {
+                                "description": "Reads the event label and auto assigns the correct workbook to the event.",
+                                "fields": [
+                                    {
+                                        "dataTypes": [
+                                            "phantom container id"
+                                        ],
+                                        "description": "Input container id",
+                                        "inputType": "item",
+                                        "label": "container",
+                                        "name": "container",
+                                        "placeholder": "container:id",
+                                        "renderType": "datapath",
+                                        "required": false
+                                    }
+                                ],
+                                "label": "POV_Add_Workbook_py3",
+                                "name": "POV_Add_Workbook_py3"
+                            }
+                        },
+                        "utilityType": "custom_function",
+                        "values": {
+                            "POV_Add_Workbook_py3": {
+                                "container": "container:id"
+                            }
+                        }
+                    },
+                    "errors": {},
+                    "id": "3",
+                    "type": "utility",
+                    "warnings": {},
+                    "x": 0,
+                    "y": 148
+                }
+            },
+            "notes": "",
+            "origin": {
+                "playbook_id": 549,
+                "playbook_name": "PIAB-POV_Auto_Add_Workbook_py3_modern",
+                "playbook_repo_id": 2,
+                "playbook_repo_name": "local"
+            }
+        },
+        "input_spec": null,
+        "output_spec": null,
+        "playbook_trigger": "artifact_created",
+        "playbook_type": "automation",
+        "python_version": "3",
+        "schema": "5.0.15",
+        "version": "6.3.1.178"
+    },
+    "create_time": "2025-03-04T04:44:11.423921+00:00",
+    "draft_mode": false,
+    "labels": [
+        "*"
+    ],
+    "tags": []
+}
